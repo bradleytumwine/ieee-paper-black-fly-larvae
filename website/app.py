@@ -49,7 +49,7 @@ def signup():
 
 # Login Page
 def login():
-    st.title("IEEE Paper")
+    st.title("Final Year Project")
     st.subheader("Login")
     email    = st.text_input("Email")
     password = st.text_input("Password", type="password")
@@ -63,7 +63,7 @@ def login():
 
 # Main Page
 def main():
-    st.title("IEEE Paper")
+    st.title("Final Year Project")
     st.subheader("Main")
 
     # Get data from Firebase Realtime Database
@@ -90,7 +90,7 @@ def main():
 
 
 if __name__ == "__main__":
-    st.sidebar.title("IEEE Paper")
+    st.sidebar.title("Final Year Project")
     menu = st.sidebar.radio("Menu", ["Login", "SignUp"])
     if menu == "Login":
         login()
