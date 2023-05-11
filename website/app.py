@@ -2,7 +2,7 @@ import pyrebase
 import streamlit as st
 from datetime import datetime
 
-firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyAoSi4C4T65EZs0dCJCzjXXadYduAvzT_w",
   authDomain: "final-year-project-e6e81.firebaseapp.com",
   databaseURL: "https://final-year-project-e6e81-default-rtdb.firebaseio.com",
