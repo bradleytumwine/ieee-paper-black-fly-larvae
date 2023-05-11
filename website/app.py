@@ -2,17 +2,16 @@ import pyrebase
 import streamlit as st
 from datetime import datetime
 
-
 firebaseConfig = {
-  'apiKey'             : "AIzaSyAHDUls-v3DKM7q9X70OkXaMzIbNgWqHR4",
-  'authDomain'         : "ieeepaper.firebaseapp.com",
-  'databaseURL'        : "https://ieeepaper-default-rtdb.europe-west1.firebasedatabase.app",
-  'projectId'          : "ieeepaper",
-  'storageBucket'      : "ieeepaper.appspot.com",
-  'messagingSenderId'  : "296735563322",
-  'appId'              : "1:296735563322:web:8264b3da451df8ed881f03",
-  'measurementId'      : "G-295EPTTZ0W"
-}
+  apiKey: "AIzaSyAoSi4C4T65EZs0dCJCzjXXadYduAvzT_w",
+  authDomain: "final-year-project-e6e81.firebaseapp.com",
+  databaseURL: "https://final-year-project-e6e81-default-rtdb.firebaseio.com",
+  projectId: "final-year-project-e6e81",
+  storageBucket: "final-year-project-e6e81.appspot.com",
+  messagingSenderId: "36719237646",
+  appId: "1:36719237646:web:b483b05c2a84fea25e3a5f",
+  measurementId: "G-MCWKJSPV8F"
+};
 
 # Initialize Firebase
 firebase    = pyrebase.initialize_app(firebaseConfig)
@@ -22,7 +21,7 @@ storage     = firebase.storage()
 
 # sign up
 def signup():
-    st.title("IEEE Paper")
+    st.title("Final Year Project")
     st.subheader("Sign Up")
     email = st.text_input("Email")
     #check if email is valid email
