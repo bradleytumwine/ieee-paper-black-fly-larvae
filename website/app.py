@@ -21,8 +21,8 @@ storage     = firebase.storage()
 
 #sign up
 def signup():
-    st.title("Final Year Project")
-    st.subheader("Sign Up")
+    #st.title("Final Year Project")
+    st.title("Sign Up")
     email = st.text_input("Email")
     #check if email is valid email
     if email:
@@ -49,8 +49,8 @@ def signup():
 
 # Login Page
 def login():
-    st.title("Final Year Project")
-    st.subheader("Login")
+    #st.title("Final Year Project")
+    st.title("Login")
     email    = st.text_input("Email")
     password = st.text_input("Password", type="password")
     if st.button("Login"):
