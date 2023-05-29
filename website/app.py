@@ -57,10 +57,10 @@ def login():
         try:
             auth.sign_in_with_email_and_password(email, password)
             st.success("Logged In")
-            access = True
+            global access = True
         except:
             st.error("Invalid Email or Password")
-            access = False
+            global access = False
 
 def update_cat1On(value):
     ref = db.child("OVERRIDE").child('CATEGORY1').child("setOn")
