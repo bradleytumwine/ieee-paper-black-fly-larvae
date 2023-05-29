@@ -1,3 +1,7 @@
+streamlit
+firebase_admin
 pyrebase==3.0.27
-Pyrebase4==4.6.0
-streamlit==1.20.0
+Pyrebase4
+requests
+urllib3==1.26.15
+requests-toolbelt==0.10.1
