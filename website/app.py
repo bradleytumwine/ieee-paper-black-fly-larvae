@@ -19,7 +19,7 @@ auth        = firebase.auth()
 db          = firebase.database()
 storage     = firebase.storage()
 
-sign up
+#sign up
 def signup():
     st.title("Final Year Project")
     st.subheader("Sign Up")
