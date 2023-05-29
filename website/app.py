@@ -2,7 +2,7 @@ import pyrebase
 import streamlit as st
 from datetime import datetime
 
-access = True
+access = False
 
 firebaseConfig = {
   'apiKey': "AIzaSyAoSi4C4T65EZs0dCJCzjXXadYduAvzT_w",
