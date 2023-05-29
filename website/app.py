@@ -49,6 +49,7 @@ def signup():
 
 # Login Page
 def login():
+    global access
     #st.title("Final Year Project")
     st.title("Login")
     email    = st.text_input("Email")
@@ -57,10 +58,10 @@ def login():
         try:
             auth.sign_in_with_email_and_password(email, password)
             st.success("Logged In")
-            global access = True
+            access = True
         except:
             st.error("Invalid Email or Password")
-            global access = False
+            access = False
 
 def update_cat1On(value):
     ref = db.child("OVERRIDE").child('CATEGORY1').child("setOn")
