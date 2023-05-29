@@ -91,9 +91,8 @@ def update_cat3Off(value):
 
 # Main Page
 def main():
-    st.title("PARAMETERS")
-    #st.subheader("Main")
-
+    st.title("ESSENTIAL ELECTRICAL SYSTEM")
+    st.title("Parameters")
     # Get data from Firebase Realtime Database
     amp1         = db.child("CATEGORY1"    ).child("Current(A)"        ).get()
     volt1        = db.child("CATEGORY1"    ).child("Voltage(V)"        ).get()
@@ -137,7 +136,7 @@ def main():
     st.subheader("FUEL")
     st.write("Fuel: ",fuel.val())
     
-    st.title("MANUAL OVERRIDE")
+    st.title("Manual Override")
     st.subheader("CATEGORY 1")
     col1, col2, col3, col4 = st.columns(4)
     with col1:
