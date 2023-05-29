@@ -57,9 +57,10 @@ def login():
         try:
             auth.sign_in_with_email_and_password(email, password)
             st.success("Logged In")
-            main()
+            access = True
         except:
             st.error("Invalid Email or Password")
+            access = False
 
 def update_cat1On(value):
     ref = db.child("OVERRIDE").child('CATEGORY1').child("setOn")
@@ -204,5 +205,9 @@ if __name__ == "__main__":
         login()
     elif menu == "SignUp":
         signup()
-
+    if access:
+        main()
+    else:
+        pass
+    
 #I hope this helps you to get started with Firebase and Streamlit. If you have any questions, please let me know in the comments below.
