@@ -82,7 +82,7 @@ def update_cat1Off():
     st.success("Manual ON deavtivated")
 
 def update_cat2On():
-  current_value = db.child("OVERRIDE").child("CATEGORY2").cild("setOff").get().val()  # Fetch current value from the database
+  current_value = db.child("OVERRIDE").child("CATEGORY2").child("setOn").get().val()  # Fetch current value from the database
   new_value = not current_value  # Toggle the value
   db.child("OVERRIDE").child("CATEGORY1").child("setOn").set(new_value)
   if new_value == True:
@@ -169,34 +169,28 @@ def main():
     col1, col2 = st.columns(2)
     with col1:
         if st.button("TURN ON 1"):
-            update_cat1On(True)
-            st.success("Manual ON  activated")
+            update_cat1On()
     with col2:
         if st.button("TURN OFF 1"):
-            update_cat1On(False)
-            st.success("Manual ON deactivated")
+            update_cat1Off()
             
     st.subheader("CATEGORY 2")
     col1, col2 = st.columns(2)
     with col1:
         if st.button("TURN ON 2"):
-            update_cat2On(True)
-            st.success("Manual ON  activated")
+            update_cat2On()
     with col2:
         if st.button("TURN OFF 2"):
-            update_cat2On(False)
-            st.success("Manual ON deactivated")
+            update_cat2Off()
     
     st.subheader("CATEGORY 3")
     col1, col2 = st.columns(2)
     with col1:
         if st.button("TURN ON 3"):
-            update_cat3On(True)
-            st.success("Manual ON  activated")
+            update_cat3On()
     with col2:
         if st.button("TURN OFF 3"):
-            update_cat3On(False)
-            st.success("Manual ON deactivated")
+            update_cat3Off()
     
 if __name__ == "__main__":
       main()
