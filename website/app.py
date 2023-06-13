@@ -84,34 +84,34 @@ def update_cat1Off():
 def update_cat2On():
   current_value = db.child("OVERRIDE").child("CATEGORY2").child("setOn").get().val()  # Fetch current value from the database
   new_value = not current_value  # Toggle the value
-  db.child("OVERRIDE").child("CATEGORY1").child("setOn").set(new_value)
+  db.child("OVERRIDE").child("CATEGORY2").child("setOn").set(new_value)
   if new_value == True:
     st.success("Manual ON activated")
   elif new_value == False:
     st.success("Manual ON deavtivated")
     
 def update_cat2Off():
-  current_value = db.child("OVERRIDE").child("CATEGORY1").child("setOn").get().val()  # Fetch current value from the database
+  current_value = db.child("OVERRIDE").child("CATEGORY2").child("setOff").get().val()  # Fetch current value from the database
   new_value = not current_value  # Toggle the value
-  db.child("OVERRIDE").child("CATEGORY1").child("setOn").set(new_value)
+  db.child("OVERRIDE").child("CATEGORY2").child("setOff").set(new_value)
   if new_value == True:
     st.success("Manual ON activated")
   elif new_value == False:
     st.success("Manual ON deavtivated")
     
 def update_cat3On():
-  current_value = db.child("OVERRIDE").child("CATEGORY1").child("setOn").get().val()  # Fetch current value from the database
+  current_value = db.child("OVERRIDE").child("CATEGORY3").child("setOn").get().val()  # Fetch current value from the database
   new_value = not current_value  # Toggle the value
-  db.child("OVERRIDE").child("CATEGORY1").child("setOn").set(new_value)
+  db.child("OVERRIDE").child("CATEGORY3").child("setOn").set(new_value)
   if new_value == True:
     st.success("Manual ON activated")
   elif new_value == False:
     st.success("Manual ON deavtivated")
     
-def update_cat3Off:
-  current_value = db.child("OVERRIDE").child("CATEGORY1").child("setOn").get().val()  # Fetch current value from the database
+def update_cat3Off():
+  current_value = db.child("OVERRIDE").child("CATEGORY3").child("setOff").get().val()  # Fetch current value from the database
   new_value = not current_value  # Toggle the value
-  db.child("OVERRIDE").child("CATEGORY1").child("setOn").set(new_value)
+  db.child("OVERRIDE").child("CATEGORY3").child("setOff").set(new_value)
   if new_value == True:
     st.success("Manual ON activated")
   elif new_value == False:
