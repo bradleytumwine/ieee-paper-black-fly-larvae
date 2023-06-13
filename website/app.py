@@ -77,9 +77,9 @@ def update_cat1Off():
   new_value = not current_value  # Toggle the value
   db.child("OVERRIDE").child("CATEGORY1").child("setOff").set(new_value)
   if new_value == True:
-    st.success("Manual ON activated")
+    st.success("Manual OFF activated")
   elif new_value == False:
-    st.success("Manual ON deavtivated")
+    st.success("Manual OFF deavtivated")
 
 def update_cat2On():
   current_value = db.child("OVERRIDE").child("CATEGORY2").child("setOn").get().val()  # Fetch current value from the database
@@ -95,9 +95,9 @@ def update_cat2Off():
   new_value = not current_value  # Toggle the value
   db.child("OVERRIDE").child("CATEGORY2").child("setOff").set(new_value)
   if new_value == True:
-    st.success("Manual ON activated")
+    st.success("Manual OFF activated")
   elif new_value == False:
-    st.success("Manual ON deavtivated")
+    st.success("Manual OFF deavtivated")
     
 def update_cat3On():
   current_value = db.child("OVERRIDE").child("CATEGORY3").child("setOn").get().val()  # Fetch current value from the database
@@ -113,9 +113,9 @@ def update_cat3Off():
   new_value = not current_value  # Toggle the value
   db.child("OVERRIDE").child("CATEGORY3").child("setOff").set(new_value)
   if new_value == True:
-    st.success("Manual ON activated")
+    st.success("Manual OFF activated")
   elif new_value == False:
-    st.success("Manual ON deavtivated")
+    st.success("Manual OFF deavtivated")
     
 # Main Page
 def main():
