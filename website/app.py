@@ -62,33 +62,61 @@ def login():
         except:
             st.error("Invalid Email or Password")
             access = False
-
-def update_cat1On(value):
-    ref = db.child("OVERRIDE").child('CATEGORY1').child("setOn")
-    ref.set(value)
-    #st.write("Fog!!")
-def update_cat1Off(value):
-    ref = db.child("OVERRIDE").child("CATEGORY1").child('setOff')
-    ref.set(value)
     
+def update_cat1On():
+  current_value = db.child("OVERRIDE").child("CATEGORY1").child("setOn").get().val()  # Fetch current value from the database
+  new_value = not current_value  # Toggle the value
+  db.child("OVERRIDE").child("CATEGORY1").child("setOn").set(new_value)
+  if new_value == True:
+    st.success("Manual ON activated")
+  elif new_value == False:
+    st.success("Manual ON deavtivated")
 
-def update_cat2On(value):
-    ref = db.child("OVERRIDE").child("CATEGORY2").child('setOn')
-    ref.set(value)
-    
-def update_cat2Off(value):
-    ref = db.child("OVERRIDE").child("CATEGORY2").child('setOff')
-    ref.set(value)
-    
+def update_cat1Off():
+  current_value = db.child("OVERRIDE").child("CATEGORY1").child("setOff").get().val()  # Fetch current value from the database
+  new_value = not current_value  # Toggle the value
+  db.child("OVERRIDE").child("CATEGORY1").child("setOff").set(new_value)
+  if new_value == True:
+    st.success("Manual ON activated")
+  elif new_value == False:
+    st.success("Manual ON deavtivated")
 
-def update_cat3On(value):
-    ref = db.child("OVERRIDE").child("CATEGORY3").child('setOn')
-    ref.set(value)
+def update_cat2On():
+  current_value = db.child("OVERRIDE").child("CATEGORY2").cild("setOff").get().val()  # Fetch current value from the database
+  new_value = not current_value  # Toggle the value
+  db.child("OVERRIDE").child("CATEGORY1").child("setOn").set(new_value)
+  if new_value == True:
+    st.success("Manual ON activated")
+  elif new_value == False:
+    st.success("Manual ON deavtivated")
     
-def update_cat3Off(value):
-    ref = db.child("OVERRIDE").child("CATEGORY3").child('setOff')
-    ref.set(value)
-
+def update_cat2Off():
+  current_value = db.child("OVERRIDE").child("CATEGORY1").child("setOn").get().val()  # Fetch current value from the database
+  new_value = not current_value  # Toggle the value
+  db.child("OVERRIDE").child("CATEGORY1").child("setOn").set(new_value)
+  if new_value == True:
+    st.success("Manual ON activated")
+  elif new_value == False:
+    st.success("Manual ON deavtivated")
+    
+def update_cat3On():
+  current_value = db.child("OVERRIDE").child("CATEGORY1").child("setOn").get().val()  # Fetch current value from the database
+  new_value = not current_value  # Toggle the value
+  db.child("OVERRIDE").child("CATEGORY1").child("setOn").set(new_value)
+  if new_value == True:
+    st.success("Manual ON activated")
+  elif new_value == False:
+    st.success("Manual ON deavtivated")
+    
+def update_cat3Off:
+  current_value = db.child("OVERRIDE").child("CATEGORY1").child("setOn").get().val()  # Fetch current value from the database
+  new_value = not current_value  # Toggle the value
+  db.child("OVERRIDE").child("CATEGORY1").child("setOn").set(new_value)
+  if new_value == True:
+    st.success("Manual ON activated")
+  elif new_value == False:
+    st.success("Manual ON deavtivated")
+    
 # Main Page
 def main():
     st.title("ESSENTIAL ELECTRICAL SYSTEM")
@@ -138,66 +166,38 @@ def main():
     
     st.title("Manual Override")
     st.subheader("CATEGORY 1")
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2 = st.columns(2)
     with col1:
-        if st.button("TURN ON 1(ON)"):
+        if st.button("TURN ON 1"):
             update_cat1On(True)
             st.success("Manual ON  activated")
     with col2:
-        if st.button("TURN ON 1(OFF)"):
+        if st.button("TURN OFF 1"):
             update_cat1On(False)
             st.success("Manual ON deactivated")
-    with col3:
-        if st.button("TURN OFF 1(ON)"):
-            update_cat1Off(True)
-            st.success("Manual OFF  activated")
-    with col4:
-        if st.button("TURN OFF 1(OFF)"):
-            update_cat1Off(False)
-            st.success("Manual OFF deactivated")
             
     st.subheader("CATEGORY 2")
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2 = st.columns(2)
     with col1:
-        if st.button("TURN ON 2(ON)"):
+        if st.button("TURN ON 2"):
             update_cat2On(True)
             st.success("Manual ON  activated")
     with col2:
-        if st.button("TURN ON 2(OFF)"):
+        if st.button("TURN OFF 2"):
             update_cat2On(False)
             st.success("Manual ON deactivated")
-    with col3:
-        if st.button("TURN OFF 2(ON)"):
-            update_cat2Off(True)
-            st.success("Manual OFF  activated")    
-    with col4:
-        if st.button("TURN OFF 2(OFF)"):
-            update_cat2Off(False)
-            st.success("Manual OFF deactivated")
     
     st.subheader("CATEGORY 3")
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2 = st.columns(2)
     with col1:
-        if st.button("TURN ON 3(ON)"):
+        if st.button("TURN ON 3"):
             update_cat3On(True)
             st.success("Manual ON  activated")
     with col2:
-        if st.button("TURN ON 3(OFF)"):
+        if st.button("TURN OFF 3"):
             update_cat3On(False)
             st.success("Manual ON deactivated")
-    with col3:
-        if st.button("TURN OFF 3(ON)"):
-            update_cat3Off(True)
-            st.success("Manual OFF  activated")
     
-    with col4:
-        if st.button("TURN OFF 3(OFF)"):
-            update_cat3Off(False)
-            st.success("Manual OFF deactivated")
-    
-    
-
-
 if __name__ == "__main__":
       main()
 #     st.sidebar.title("ESSENTIAL ELECTRICAL SYSTEM")
